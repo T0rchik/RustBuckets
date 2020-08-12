@@ -22,7 +22,7 @@ public class Cannon : Weapon
         {
             currAmmo -= 1;
             GameObject currProjectile = (GameObject)Instantiate(projectile, muzzlePoint.position, muzzlePoint.rotation);
-            currProjectile.GetComponent<Rigidbody>().AddForce(muzzlePoint.up * shootForce);
+            currProjectile.GetComponent<Rigidbody>().AddForce(muzzlePoint.forward * shootForce);
             Destroy(currProjectile, projectileLifetime);
             timeToShoot = shootTime;
 
