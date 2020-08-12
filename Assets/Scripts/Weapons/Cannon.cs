@@ -9,10 +9,14 @@ public class Cannon : Weapon
     public float projectileLifetime = 5.0f;
     public float shootForce;
 
-    public Cannon(int maxAmmo, float shootTime, int damage) : base(maxAmmo, shootTime, damage)
-    {}
+    //public Cannon(int maxAmmo, float shootTime, int damage) : base(maxAmmo, shootTime, damage)
+    //{}
+    void Start()
+    {
+        currAmmo = maxAmmo;
+    }
 
-    public void Fire()
+    public new void Fire()
     {
         if(currAmmo > 0)
         {
@@ -21,13 +25,15 @@ public class Cannon : Weapon
             currProjectile.GetComponent<Rigidbody>().AddForce(muzzlePoint.up * shootForce);
             Destroy(currProjectile, projectileLifetime);
             timeToShoot = shootTime;
+
+            Debug.Log(currAmmo + " / " + maxAmmo);
         } else {
             Debug.Log("Out of Ammo!");
             // Add onscreen indicator or something
         }
     }
 
-    public void AltFire()
+    public new void AltFire()
     {
         // Zoom in function
         Debug.Log("View zooms in.");
