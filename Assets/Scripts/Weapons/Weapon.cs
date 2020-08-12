@@ -7,17 +7,13 @@ public class Weapon : MonoBehaviour
     public int maxAmmo;
     protected int currAmmo;
     public float shootTime;
-    public float timeToShoot;
+    protected float timeToShoot;
     public int damage;
 
-    /*public Weapon(int maxAmmo, float shootTime, int damage)
+    public float TTS()
     {
-        this.maxAmmo = maxAmmo;
-        this.currAmmo = maxAmmo;
-        this.shootTime = shootTime;
-        this.damage = damage;
+        return timeToShoot;
     }
-    */
 
     void Start()
     {
@@ -38,5 +34,10 @@ public class Weapon : MonoBehaviour
     public void Reload()
     {
         // Reloads the weapon if applicable
+    }
+
+    public void UpdateTTS()     // Updates time to shoot
+    {
+        timeToShoot -= Time.deltaTime;
     }
 }

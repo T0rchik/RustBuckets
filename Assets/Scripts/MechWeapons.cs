@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 
 public class MechWeapons : MonoBehaviour
@@ -10,6 +11,9 @@ public class MechWeapons : MonoBehaviour
 //    public Weapon gun;
     public Cannon gun;
 
+    public Hand hand;
+    public SteamVR_Action_Boolean fireAction;
+    public SteamVR_Action_Boolean altFireAction;
 
 
     // Start is called before the first frame update
@@ -21,18 +25,18 @@ public class MechWeapons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gun.timeToShoot -= Time.deltaTime;
-        //if(SteamVR_Input.GetAction<Valve.VR.SteamVR_Action_Boolean>("FireWeapon") && gun.timeToShoot <= 0f) 
-        if(Input.GetButtonDown("Fire1"))
+        gun.UpdateTTS();
+
+        if(SteamVR_Actions.default_FireWeapon[SteamVR_Input_Sources.RightHand].state && gun.TTS() <= 0f)
        {
            Debug.Log("Firing!!!!");
            gun.Fire();
        }
 
-       if(Input.GetButtonDown("Fire2"))
-       {
-           gun.AltFire();
-       }
+        if(SteamVR_Actions.default_AltFire[SteamVR_Input_Sources.LeftHand].state)
+        {
+            gun.AltFire();
+        }
     }
 
 
