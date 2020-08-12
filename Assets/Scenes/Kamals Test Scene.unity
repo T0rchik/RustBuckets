@@ -251,6 +251,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 759987882}
+  hand: {fileID: 0}
+  fireAction:
+    actionPath: /actions/default/in/FireWeapon
+    needsReinit: 0
+  altFireAction:
+    actionPath: /actions/default/in/AltFire
+    needsReinit: 0
 --- !u!1 &547173997
 GameObject:
   m_ObjectHideFlags: 0
