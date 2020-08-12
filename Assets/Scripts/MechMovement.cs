@@ -17,6 +17,7 @@ public class MechMovement : MonoBehaviour
     [Header("Movement Settings")]
     public float force = 30;
     public float forceConstant = 5;
+    public float stepForce = 1;
 
 
     private bool movementActive = false;
@@ -54,11 +55,28 @@ public class MechMovement : MonoBehaviour
             if (leftDif < 0) difference -= leftDif;
             if (rightDif < 0) difference -= rightDif;
 
+
             difference *= 2000;
 
             Debug.Log(difference);
 
-            mech.AddRelativeForce(Vector3.forward * (force * difference + forceConstant), ForceMode.Impulse);
+            Vector3 horizontalMove = Vector3.forward;
+            Vector3 verticalMove = Vector3.up;
+
+            if (leftDif < 0 && rightDif < 0)
+            {
+                verticalMove *= difference * force * stepForce;
+                horizontalMove *= (difference + forceConstant);
+            }
+            else
+            {
+                verticalMove *= stepForce;
+                horizontalMove *= (force * difference + forceConstant);
+            }
+
+            
+
+            mech.AddRelativeForce(horizontalMove + verticalMove, ForceMode.Impulse);
 
             framesUnchanged = 0;
         }
