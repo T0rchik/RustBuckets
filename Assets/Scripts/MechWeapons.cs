@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
@@ -15,11 +16,16 @@ public class MechWeapons : MonoBehaviour
     public SteamVR_Action_Boolean fireAction;
     public SteamVR_Action_Boolean altFireAction;
 
+    public Canvas weaponMonitor;
+    Text[] textBoxes;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       textBoxes = weaponMonitor.GetComponentsInChildren<Text>(); 
+       textBoxes[0].text = gun.name;
+       textBoxes[1].text = gun.AmmoToString();
     }
 
     // Update is called once per frame
@@ -37,6 +43,8 @@ public class MechWeapons : MonoBehaviour
         {
             gun.AltFire();
         }
+
+       textBoxes[1].text = gun.AmmoToString();
     }
 
 

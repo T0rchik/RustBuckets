@@ -40,4 +40,10 @@ public class Weapon : MonoBehaviour
     {
         timeToShoot -= Time.deltaTime;
     }
+
+    public string AmmoToString()    // returns currAmmo/maxAmmo as a string
+    {
+        string ammoCount = currAmmo + "/" + maxAmmo;
+        return ammoCount;
+    }
 }
