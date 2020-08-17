@@ -105,22 +105,6 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean FireWeapon
-        {
-            get
-            {
-                return SteamVR_Actions.default_FireWeapon;
-            }
-        }
-        
-        public virtual SteamVR_Action_Boolean AltFire
-        {
-            get
-            {
-                return SteamVR_Actions.default_AltFire;
-            }
-        }
-        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get

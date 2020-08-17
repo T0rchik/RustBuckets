@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.rustbuckets.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "E:\\Programming\\GMAP 345\\RustBuckets\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\Michael Dardour\\Documents\\Unity Projects\\RustBuckets\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "RustBuckets [Testing]"
