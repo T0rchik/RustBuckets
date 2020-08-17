@@ -558,7 +558,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297140442}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7970586, y: -0.22364688, z: 0.30183434}
+  m_LocalPosition: {x: 3.7970586, y: -1.2236469, z: 0.30183434}
   m_LocalScale: {x: 4, y: 3, z: 4}
   m_Children: []
   m_Father: {fileID: 269499197}
@@ -637,10 +637,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mech Parent
       objectReference: {fileID: 0}
-    - target: {fileID: 3343981815877994644, guid: 3c8ab28aea9749b4199e78d7a140cf9a, type: 3}
-      propertyPath: m_Mass
-      value: 2000
-      objectReference: {fileID: 0}
     - target: {fileID: 3343981815877994645, guid: 3c8ab28aea9749b4199e78d7a140cf9a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.3116918
@@ -651,7 +647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3343981815877994645, guid: 3c8ab28aea9749b4199e78d7a140cf9a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.789406
+      value: -78.2
       objectReference: {fileID: 0}
     - target: {fileID: 3343981815877994645, guid: 3c8ab28aea9749b4199e78d7a140cf9a, type: 3}
       propertyPath: m_LocalRotation.x

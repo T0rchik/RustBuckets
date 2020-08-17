@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Diagnostics;
@@ -15,9 +16,15 @@ public class MechMovement : MonoBehaviour
     public Rigidbody mech;
 
     [Header("Movement Settings")]
-    public float force = 30;
-    public float forceConstant = 5;
-    public float stepForce = 1;
+    public float maxDistancePerStep = 2f;
+    public float force = 10f;
+    public float jumpForce = 1f;
+    public float forwardJumpDivisor = 2.5f;
+    public float differenceMultiplier = 20f;
+    public float gravity = 2;
+
+    [HideInInspector]
+    public bool grounded = true;
 
 
     private bool movementActive = false;
@@ -39,6 +46,13 @@ public class MechMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        grounded = Physics.Raycast(mech.transform.position, Vector3.down, 5.5f);
+        if (!grounded)
+        {
+            Debug.Log("notGrounded");
+            mech.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
+        }
+
         if (movementActive && leftValueCurrent != leftControl.value || rightValueCurrent != rightControl.value)
         {
             float leftDif = leftValueCurrent - leftControl.value;
@@ -47,38 +61,30 @@ public class MechMovement : MonoBehaviour
             leftValueCurrent = leftControl.value;
             rightValueCurrent = rightControl.value;
 
-
-            //difference = (leftValueCurrent / (1 - rightValueCurrent));
-            //if (difference > 1) difference = 2 - difference;
-
             difference = 0;
             if (leftDif < 0) difference -= leftDif;
             if (rightDif < 0) difference -= rightDif;
 
-
-            difference *= 2000;
-
-            Debug.Log(difference);
-
-            Vector3 horizontalMove = Vector3.forward;
-            Vector3 verticalMove = Vector3.up;
+            Vector3 horizontalMove = mech.transform.forward * force;
+            Vector3 verticalMove = mech.transform.up * force;
 
             if (leftDif < 0 && rightDif < 0)
             {
-                verticalMove *= difference * force * stepForce;
-                horizontalMove *= (difference + forceConstant);
+                horizontalMove *= maxDistancePerStep / forwardJumpDivisor;
+                verticalMove *= jumpForce;
             }
             else
             {
-                verticalMove *= stepForce;
-                horizontalMove *= (force * difference + forceConstant);
+                horizontalMove *= maxDistancePerStep;
+                verticalMove *= Mathf.Log(jumpForce);
             }
 
-            
+            Vector3 currentPos = mech.transform.position;
+            Vector3 targetPos = mech.transform.position + horizontalMove + verticalMove;
 
-            mech.AddRelativeForce(horizontalMove + verticalMove, ForceMode.Impulse);
-
-            framesUnchanged = 0;
+            Vector3 translate = Vector3.MoveTowards(currentPos, targetPos, difference * differenceMultiplier);
+            mech.MovePosition(translate);
+            mech.AddForce(translate);
         }
         else
         {
@@ -88,6 +94,7 @@ public class MechMovement : MonoBehaviour
                 //mech.velocity = Vector3.zero;
             }
         }
+        
     }
 
     IEnumerator startUp()
@@ -96,6 +103,4 @@ public class MechMovement : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         movementActive = true;
     }
-
-
 }

@@ -56,9 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MechWeapons.cs" />
+    <Compile Include="Assets\Scripts\MechRotation.cs" />
     <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
     <Compile Include="Assets\Scripts\Weapons\Cannon.cs" />
+    <Compile Include="Assets\Scripts\Minimap.cs" />
     <Compile Include="Assets\Scripts\MechMovement.cs" />
   </ItemGroup>
   <ItemGroup>
