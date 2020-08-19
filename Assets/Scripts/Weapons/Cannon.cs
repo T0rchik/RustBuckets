@@ -16,7 +16,7 @@ public class Cannon : Weapon
         currAmmo = maxAmmo;
     }
 
-    public new void Fire()
+    public override void Fire()
     {
         if(currAmmo > 0)
         {
@@ -33,7 +33,7 @@ public class Cannon : Weapon
         }
     }
 
-    public new void AltFire()
+    public override void AltFire()
     {
         // Zoom in function
         Debug.Log("View zooms in.");

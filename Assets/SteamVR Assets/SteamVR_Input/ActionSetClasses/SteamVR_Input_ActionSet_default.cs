@@ -113,19 +113,19 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean FireWeapon
+        public virtual SteamVR_Action_Boolean NextWeapon
         {
             get
             {
-                return SteamVR_Actions.default_FireWeapon;
+                return SteamVR_Actions.default_NextWeapon;
             }
         }
         
-        public virtual SteamVR_Action_Boolean AltFire
+        public virtual SteamVR_Action_Boolean PrevWeapon
         {
             get
             {
-                return SteamVR_Actions.default_AltFire;
+                return SteamVR_Actions.default_PrevWeapon;
             }
         }
         

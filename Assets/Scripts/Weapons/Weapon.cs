@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
     public int maxAmmo;
     protected int currAmmo;
@@ -21,20 +21,14 @@ public class Weapon : MonoBehaviour
        currAmmo = maxAmmo;
     }
 
-    public void Fire()
-    {
-        // Fires the weapon
-    }
+    // Fires the weapon
+    public abstract void Fire();
 
-    public void AltFire()
-    {
-        // Performs weapons alternate action
-    }
+    // Performs weapons alternate action
+    public abstract void AltFire();
 
-    public void Reload()
-    {
-        // Reloads the weapon if applicable
-    }
+    // Reloads the weapon if applicable
+    //public abstract void Reload();
 
     public void UpdateTTS()     // Updates time to shoot
     {

@@ -54,6 +54,14 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/default/in/NextWeapon",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/PrevWeapon",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
@@ -90,7 +98,7 @@
   "action_sets": [
     {
       "name": "/actions/default",
-      "usage": "single"
+      "usage": "leftright"
     },
     {
       "name": "/actions/platformer",
@@ -113,10 +121,6 @@
     {
       "controller_type": "oculus_touch",
       "binding_url": "bindings_oculus_touch.json"
-    },
-    {
-      "controller_type": "knuckles",
-      "binding_url": "bindings_knuckles.json"
     },
     {
       "controller_type": "holographic_controller",
