@@ -11,6 +11,8 @@ public class MechRotation : MonoBehaviour
     private float currentRotation = 0;
     public float maxAngularVelocity = 7;
 
+    private Quaternion targetRotation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,9 @@ public class MechRotation : MonoBehaviour
         }
 
         mech.maxAngularVelocity = maxAngularVelocity;
+
+        targetRotation = mech.transform.localRotation;
+
         //if (! SteamVR_Actions.default_Rotation.active) { Debug.LogError("Rotation Input not bound"); }
     }
 
@@ -40,9 +45,11 @@ public class MechRotation : MonoBehaviour
         if (currentRotation != 0)
         {
             //Debug.Log(value);
-            mech.angularVelocity = (Vector3.up * currentRotation);
+            //mech.angularVelocity = (Vector3.up * currentRotation);
+            targetRotation *= Quaternion.Euler(0f, currentRotation, 0f);
+
         }
 
-
+        mech.transform.localRotation = targetRotation;
     }
 }

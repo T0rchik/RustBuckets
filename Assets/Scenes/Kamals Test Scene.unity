@@ -360,6 +360,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &557629392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2581994902512574799, guid: 2840e4f7560e50b4980f3ed7c8f8eef3, type: 3}
+  m_PrefabInstance: {fileID: 989986052700635975}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &961895231
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +726,10 @@ PrefabInstance:
       propertyPath: main
       value: 
       objectReference: {fileID: 68028889}
+    - target: {fileID: 1299377822, guid: 2840e4f7560e50b4980f3ed7c8f8eef3, type: 3}
+      propertyPath: Mech
+      value: 
+      objectReference: {fileID: 557629392}
     - target: {fileID: 2581994902512574793, guid: 2840e4f7560e50b4980f3ed7c8f8eef3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.076584

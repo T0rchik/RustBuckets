@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Kamals Test Scene.unity
+    guid: 7ee1b8b51a029d641bca51fd8b6c2fef
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 8ebe2d74e826e3344afa3a33f876e77f, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e53b619b33a7f5a41969ff9f0a7ef55c, type: 2}
