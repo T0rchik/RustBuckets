@@ -21,6 +21,7 @@ public class MechMovement : MonoBehaviour
     public float jumpForce = 1f;
     public float forwardJumpDivisor = 2.5f;
     public float differenceMultiplier = 20f;
+    public float forceMultiplier = 2;
     public float gravity = 2;
 
     [HideInInspector]
@@ -84,7 +85,7 @@ public class MechMovement : MonoBehaviour
 
             Vector3 translate = Vector3.MoveTowards(currentPos, targetPos, difference * differenceMultiplier);
             mech.MovePosition(translate);
-            mech.AddForce(translate);
+            mech.AddForce(translate * forceMultiplier, ForceMode.Impulse);
         }
         else
         {

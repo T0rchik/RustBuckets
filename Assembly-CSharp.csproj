@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Mech\MechMovement.cs" />
     <Compile Include="Assets\Scripts\Compass.cs" />
     <Compile Include="Assets\Scripts\Weapons\GatlingGun.cs" />
+    <Compile Include="Assets\Scripts\Mech\MechStrafe.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
