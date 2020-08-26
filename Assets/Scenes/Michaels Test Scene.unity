@@ -252,6 +252,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &416327465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3343981815877994643, guid: 3c8ab28aea9749b4199e78d7a140cf9a, type: 3}
+  m_PrefabInstance: {fileID: 1023149289}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &416327466
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416327465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.005
+  m_Center: {x: 0, y: 0, z: -0.93}
 --- !u!1 &499244789
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +372,14 @@ PrefabInstance:
     - target: {fileID: 3343981815877994643, guid: 3c8ab28aea9749b4199e78d7a140cf9a, type: 3}
       propertyPath: m_Name
       value: Player Mech
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343981815877994643, guid: 3c8ab28aea9749b4199e78d7a140cf9a, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343981815877994643, guid: 3c8ab28aea9749b4199e78d7a140cf9a, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3343981815877994645, guid: 3c8ab28aea9749b4199e78d7a140cf9a, type: 3}
       propertyPath: m_LocalPosition.x
