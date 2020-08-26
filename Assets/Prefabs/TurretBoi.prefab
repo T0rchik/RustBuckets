@@ -295,6 +295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4093183762432552886}
+  - component: {fileID: 955121159}
   m_Layer: 0
   m_Name: TurretBoi
   m_TagString: Untagged
@@ -319,6 +320,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &955121159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093183762432552887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0736930a5746e4c94d649ea6d8fcaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRadius: {fileID: 311642031}
+  turretBody: {fileID: 8437900940359819642}
+  rotationStrength: 9
 --- !u!1 &4093183762834459014
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3432184888247671823}
   - component: {fileID: 1847645098645614882}
+  - component: {fileID: 311642031}
   m_Layer: 0
   m_Name: AttackRadius
   m_TagString: Untagged
@@ -808,6 +825,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 100
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &311642031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6799757603645901903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4674271d3bd05a045ae1e09f88f3a09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canAttackPlayer: 0
+  target: {fileID: 0}
 --- !u!1 &6927614634939304823
 GameObject:
   m_ObjectHideFlags: 0
