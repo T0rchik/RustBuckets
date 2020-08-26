@@ -9,9 +9,8 @@ using Valve.VR.InteractionSystem;
 public class MechWeapons : MonoBehaviour
 {
     public Weapon[] weapons;     //for later when multiple weapons are finished
-    private Weapon gun;
     private int weaponIdx;
-    //public GatlingGun gun;
+    Weapon monitorGun;
 
     public Hand hand;
     public SteamVR_Action_Boolean fireAction;
@@ -26,42 +25,43 @@ public class MechWeapons : MonoBehaviour
     {
         //weapons = new Weapon[] {cannon, gatlingGun}; 
         weaponIdx = 0;
-        gun = weapons[weaponIdx];
+        monitorGun = weapons[weaponIdx];
         textBoxes = weaponMonitor.GetComponentsInChildren<Text>(); 
-        textBoxes[0].text = gun.name;
-        textBoxes[1].text = gun.AmmoToString();
+        textBoxes[0].text = monitorGun.name;
+        textBoxes[1].text = monitorGun.AmmoToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        gun.UpdateTTS();
+        weapons[0].UpdateTTS();
+        weapons[1].UpdateTTS();
 
         if(SteamVR_Actions.default_NextWeapon[SteamVR_Input_Sources.LeftHand].state)
         {
             nextWeapon();
-            textBoxes[0].text = gun.name;
+            textBoxes[0].text = monitorGun.name;
         }
 
         if(SteamVR_Actions.default_PrevWeapon[SteamVR_Input_Sources.LeftHand].state)
         {
             prevWeapon();
-            textBoxes[0].text = gun.name;
+            textBoxes[0].text = monitorGun.name;
         }
-        
 
-        if(SteamVR_Actions.default_FireWeapon[SteamVR_Input_Sources.RightHand].state && gun.TTS() <= 0f)
+        if(SteamVR_Actions.default_FireWeapon[SteamVR_Input_Sources.RightHand].state && weapons[0].TTS() <= 0f)
        {
-           Debug.Log("Firing!!!!");
-           gun.Fire();
+           Debug.Log("Firing " + weapons[0].name + "!");
+           weapons[0].Fire();
        }
 
-        if(SteamVR_Actions.default_AltFire[SteamVR_Input_Sources.LeftHand].state)
+        if(SteamVR_Actions.default_AltFire[SteamVR_Input_Sources.LeftHand].state && weapons[1].TTS() <= 0f)
         {
-            gun.AltFire();
+           Debug.Log("Firing " + weapons[1].name + "!");
+           weapons[1].Fire(); 
         }
 
-       textBoxes[1].text = gun.AmmoToString();
+       textBoxes[1].text = monitorGun.AmmoToString();
     }
 
 
@@ -72,7 +72,7 @@ public class MechWeapons : MonoBehaviour
         {
             weaponIdx = 0;
         }
-        gun = weapons[weaponIdx];
+        monitorGun = weapons[weaponIdx];
     }
 
     void prevWeapon()
@@ -82,6 +82,6 @@ public class MechWeapons : MonoBehaviour
         {
             weaponIdx = weapons.Length - 1;
         }
-        gun = weapons[weaponIdx];
+        monitorGun = weapons[weaponIdx];
     }
 }
