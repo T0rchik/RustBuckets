@@ -58,17 +58,20 @@
     <Compile Include="Assets\Scripts\Mech\MechWeapons.cs" />
     <Compile Include="Assets\Scripts\Debug Scripts\RayViewer.cs" />
     <Compile Include="Assets\Scripts\Mech\MechRotation.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyFire.cs" />
     <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
     <Compile Include="Assets\Scripts\Enemy\TurretEnemy.cs" />
     <Compile Include="Assets\Scripts\Weapons\Cannon.cs" />
+    <Compile Include="Assets\Scripts\Weapons\HomingMissile.cs" />
     <Compile Include="Assets\Scripts\Mech\MechStrafe.cs" />
     <Compile Include="Assets\Scripts\Minimap.cs" />
+    <Compile Include="Assets\Scripts\Weapons\MissileLauncher.cs" />
     <Compile Include="Assets\Scripts\Mech\MechMovement.cs" />
     <Compile Include="Assets\Scripts\Compass.cs" />
     <Compile Include="Assets\Scripts\Enemy\DetectPlayerInArea.cs" />
     <Compile Include="Assets\Scripts\Weapons\GatlingGun.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyFire.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyProjectile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

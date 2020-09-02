@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &33020016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 33020017}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &33020017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33020016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.93, z: 3.71}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1772905242}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &165096654
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +739,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297140442}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1772905242 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8437900940359819642, guid: e1a8c1641c4c523408bc87bd21ac0bfe, type: 3}
+  m_PrefabInstance: {fileID: 4093183762847401227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1837742758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4093183762432552887, guid: e1a8c1641c4c523408bc87bd21ac0bfe, type: 3}
+  m_PrefabInstance: {fileID: 4093183762847401227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1837742761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837742758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be43b82c317e694690a55d1db534101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 33020017}
+  projectilePrefab: {fileID: 8288185153051897919, guid: 58d638e0edb60c346a137d400ca52e91, type: 3}
+  attackFrequency: 5
 --- !u!1001 &4093183762847401227
 PrefabInstance:
   m_ObjectHideFlags: 0
