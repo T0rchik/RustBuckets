@@ -16,19 +16,14 @@ public class MechWeapons : MonoBehaviour
     public SteamVR_Action_Boolean fireAction;
     public SteamVR_Action_Boolean altFireAction;
 
-    public Canvas weaponMonitor;
+    public Canvas[] weaponMonitors;
     Text[] textBoxes;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //weapons = new Weapon[] {cannon, gatlingGun}; 
-        weaponIdx = 0;
-        monitorGun = weapons[weaponIdx];
-        textBoxes = weaponMonitor.GetComponentsInChildren<Text>(); 
-        textBoxes[0].text = monitorGun.name;
-        textBoxes[1].text = monitorGun.AmmoToString();
+        updateWeaponMonitors();
     }
 
     // Update is called once per frame
@@ -37,17 +32,6 @@ public class MechWeapons : MonoBehaviour
         weapons[0].UpdateTTS();
         weapons[1].UpdateTTS();
 
-        if(SteamVR_Actions.default_NextWeapon[SteamVR_Input_Sources.LeftHand].state)
-        {
-            nextWeapon();
-            textBoxes[0].text = monitorGun.name;
-        }
-
-        if(SteamVR_Actions.default_PrevWeapon[SteamVR_Input_Sources.LeftHand].state)
-        {
-            prevWeapon();
-            textBoxes[0].text = monitorGun.name;
-        }
 
         if(SteamVR_Actions.default_FireWeapon[SteamVR_Input_Sources.RightHand].state && weapons[0].TTS() <= 0f)
        {
@@ -61,7 +45,8 @@ public class MechWeapons : MonoBehaviour
            weapons[1].Fire(); 
         }
 
-       textBoxes[1].text = monitorGun.AmmoToString();
+//       textBoxes[1].text = monitorGun.AmmoToString();
+        updateWeaponMonitors();
     }
 
 
@@ -83,5 +68,16 @@ public class MechWeapons : MonoBehaviour
             weaponIdx = weapons.Length - 1;
         }
         monitorGun = weapons[weaponIdx];
+    }
+
+    void updateWeaponMonitors()
+    {
+        textBoxes = weaponMonitors[0].GetComponentsInChildren<Text>(); 
+        textBoxes[0].text = weapons[0].name;
+        textBoxes[1].text = weapons[0].AmmoToString();
+
+        textBoxes = weaponMonitors[1].GetComponentsInChildren<Text>(); 
+        textBoxes[0].text = weapons[1].name;
+        textBoxes[1].text = weapons[1].AmmoToString();
     }
 }
