@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+//using UnityEngine.UIElements;
 
 public class MissileLauncher : Weapon
 {
     public GameObject Mech;
     public GameObject missile;
-    public Transform[] targets;
+    public GameObject[] targets;
     public Transform pointOfOrigin;
+    public GameObject missileMonitor;
+    Text[] textBoxes;
+    Image[] icons;
     
     public GameObject laserPointer;
 
@@ -22,6 +27,12 @@ public class MissileLauncher : Weapon
     void Start()
     {
        currAmmo = maxAmmo; 
+       
+       textBoxes = missileMonitor.GetComponentsInChildren<Text>();
+       textBoxes[0].text = name;
+       textBoxes[1].text = AmmoToString();
+
+       icons = missileMonitor.GetComponentsInChildren<Image>();
 
        laserLine = laserPointer.GetComponent<LineRenderer>();
        HMD_Cam = Mech.GetComponentInChildren<Camera>();
@@ -43,14 +54,15 @@ public class MissileLauncher : Weapon
        else{
         //   laserLine.enabled = false;
        }
+
+        UpdateMissileMonitor();
     }
 
     public override void Fire()
     {
         if(ReadyToFire() && currAmmo > 0)
         {
-            int counterToDelete = 0;
-            foreach(Transform target in targets)
+            for(int i = 0; i < burstSize; i++)
             {
                 currAmmo--;
                 Debug.Log("Firing");
@@ -58,11 +70,10 @@ public class MissileLauncher : Weapon
                 currMissile.GetComponent<Rigidbody>().AddForce(pointOfOrigin.up * 500f);
 
                 HomingMissile script = currMissile.GetComponent<HomingMissile>();
-                script.Fire(target);
+                script.Fire(targets[i].transform);
 
                 Destroy(currMissile, 5.0f);
-                targets[counterToDelete] = null;
-                counterToDelete++;
+                targets[i] = null;
             }
         }
         else{
@@ -117,6 +128,7 @@ public class MissileLauncher : Weapon
 
     public bool ReadyToFire()     // Fires only when all targets are filled
     {
+
         if(targets[targets.Length - 1] != null)     //fastest to test if last target is filled
         {
             return true;
@@ -130,5 +142,58 @@ public class MissileLauncher : Weapon
         laserLine.enabled = true;
         yield return shotDuration;
         laserLine.enabled = false;
+    }
+
+    private void CheckLockOn()
+    {
+        //Check if Target still exists
+        for(int i = 0; i < 4; i++)
+        {
+            if(!targets[i])
+            {
+                targets[i] = null;
+            }
+        }
+
+        //If next lock on has a lock, take it from it. Start from last to first.
+        if(targets[0] == null && targets[1] != null)
+        {
+            Debug.Log("Lock 0 took a target from Lock 1");
+            targets[0] = targets[1];
+            targets[1] = null;
+        }
+        if(targets[1] == null && targets[2] != null)
+        {
+            Debug.Log("Lock 1 took a target from Lock 2");
+            targets[1] = targets[2];
+            targets[2] = null;
+        }
+        if(targets[2] == null && targets[3] != null)
+        {
+            Debug.Log("Lock 2 took a target from Lock 3");
+            //GameObject temp = targets[3];
+            targets[2] = targets[3];
+            targets[3] = null;
+        }
+
+    }
+    public void UpdateMissileMonitor()
+    {
+        textBoxes[1].text = AmmoToString();
+
+        //Check LockOn Status
+        CheckLockOn();
+
+        for(int i = 0; i < 4; i++)
+        {
+            if(targets[i] == null)
+            {
+                icons[i].enabled = false;
+            }
+            else
+            {
+                icons[i].enabled = true;
+            }
+        }
     }
 }
