@@ -39,7 +39,15 @@ public class GatlingGun : Weapon
             {
                // Debug.Log(hit.point.ToString());
                 laserLine.SetPosition(1, hit.point);
-                
+
+
+                EnemyHealth enemy = hit.collider.GetComponentInParent<EnemyHealth>();
+
+                if (enemy != null)
+                {
+                    enemy.DealDamage(damage);
+                }
+
             }
             else{
                 laserLine.SetPosition(1, rayOrigin + (HMD_Cam.transform.forward * rayRange));

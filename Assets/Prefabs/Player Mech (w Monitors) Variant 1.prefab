@@ -2124,7 +2124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmmo: 10000
   shootTime: 0.5
-  damage: 2
+  damage: 1
   rayRange: 50
   hitForce: 100
   muzzlePoint: {fileID: 1934681172456832846}
