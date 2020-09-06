@@ -39,8 +39,7 @@ public class HomingMissile : MonoBehaviour
         VisualEffect explosion = (VisualEffect)Instantiate(explosionEffect, hitPosition, hitRotation);
         Destroy(explosion, 0.5f);
         */
-        
+        //Destroy(gameObject);        // Delete after adding explosion effects
         Debug.Log("Target Hit!");
-        Destroy(gameObject, .15f);        // Delete after adding explosion effects
     }
 }
