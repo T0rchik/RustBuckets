@@ -15,10 +15,9 @@ GameObject:
   - component: {fileID: 3536557177477991181}
   - component: {fileID: 3536557177477991180}
   - component: {fileID: 3536557177477991179}
-  - component: {fileID: -7259784173174808286}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Missile
-  m_TagString: playerProjectile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,16 +227,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turn: 10
   missileVelocity: 75
---- !u!114 &-7259784173174808286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3536557177477991177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a341f303acc37d4e8e02da49c3bdd89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  origin: {fileID: 0}
