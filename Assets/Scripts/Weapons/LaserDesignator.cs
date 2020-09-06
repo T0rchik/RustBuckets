@@ -12,6 +12,7 @@ public class LaserDesignator : MonoBehaviour
     private Interactable interactable;
     private LineRenderer laser;
     public Transform laserOrigin;
+    public Transform designatorAnchor;
     public bool inHand {get; protected set; }
 
     void Awake()
@@ -23,6 +24,7 @@ public class LaserDesignator : MonoBehaviour
     {
         laser = GetComponentInChildren<LineRenderer>();
         laser.enabled = false;
+
 
         inHand = false;
     }
@@ -38,7 +40,7 @@ public class LaserDesignator : MonoBehaviour
             startPosition = transform.position;
             startRotation = transform.rotation;
             startScale = transform.localScale;
-
+            
             // Call to continue receiving HandHoverUpdate messages,
             // and prevent hand from hovering over anything else
             hand.HoverLock(interactable);
@@ -47,20 +49,26 @@ public class LaserDesignator : MonoBehaviour
             hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
 
             inHand = true;
-
-            //laser.enabled = true;
         }
         else if(isGrabEnding)
         {
             // Do the reverse of above
-            //laser.enabled = false;
             inHand = false;
 
             hand.DetachObject(gameObject);
 
             hand.HoverUnlock(interactable);
 
-            transform.position = startPosition;
+            Debug.Log("Starting Position: " + startPosition + ", Anchor Position: " + designatorAnchor.position);
+            if(startPosition != designatorAnchor.position)
+            {
+                transform.position = designatorAnchor.position;
+            }
+            else
+            {
+                transform.position = startPosition;
+            }
+
             transform.rotation = startRotation;
             transform.localScale = startScale;
         }
