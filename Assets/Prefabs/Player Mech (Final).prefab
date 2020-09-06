@@ -1495,6 +1495,10 @@ MonoBehaviour:
   pointOfOrigin: {fileID: 1756188533698658819}
   laserDesignator: {fileID: 7609155168534824907}
   rayRange: 50
+  laserColors:
+  - {fileID: 2100000, guid: 09c359d73ef640a4e8bfbe188bcff8ef, type: 2}
+  - {fileID: 2100000, guid: b70b470bdbe67a94e9125a16f11be120, type: 2}
+  - {fileID: 2100000, guid: e2e0c77a6a2b0d54ba8d0cf458560c95, type: 2}
   missileMonitor: {fileID: 4829218612513501751}
 --- !u!120 &1196603154017911111
 LineRenderer:
@@ -2011,6 +2015,36 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: -0.0000018477442, y: 0, z: -0.00000008940697}
+--- !u!1 &4257979402871979236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1188038697142044921}
+  m_Layer: 12
+  m_Name: Designator Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1188038697142044921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4257979402871979236}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.3363495, y: -0.5220003, z: 1.3349991}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5008124544942962734}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4332220508210676915
 GameObject:
   m_ObjectHideFlags: 0
@@ -4747,6 +4781,7 @@ Transform:
   - {fileID: 1756188533504912270}
   - {fileID: 6050340193138048439}
   - {fileID: 8304769695067280772}
+  - {fileID: 1188038697142044921}
   m_Father: {fileID: 4535975315653459145}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5946,7 +5981,7 @@ GameObject:
   - component: {fileID: 7609155168360952710}
   - component: {fileID: 7609155168360952711}
   - component: {fileID: 7609155168360952708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Laser Designator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6130,6 +6165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserOrigin: {fileID: 7609155170295411592}
+  designatorAnchor: {fileID: 1188038697142044921}
 --- !u!1 &7609155168709872048
 GameObject:
   m_ObjectHideFlags: 0
@@ -7280,9 +7316,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7609155170295411592}
   - component: {fileID: 7609155170295411595}
+<<<<<<< HEAD
+  m_Layer: 10
+=======
   m_Layer: 0
+>>>>>>> 73498b2673c9c67cdfad67596eaf4126db778887
   m_Name: Laser
-  m_TagString: Untagged
+  m_TagString: LaserStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7320,7 +7360,9 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 09c359d73ef640a4e8bfbe188bcff8ef, type: 2}
   - {fileID: 2100000, guid: b70b470bdbe67a94e9125a16f11be120, type: 2}
+  - {fileID: 2100000, guid: e2e0c77a6a2b0d54ba8d0cf458560c95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7439,7 +7481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7609155170397518146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Laser End
   m_TagString: LaserEnd
   m_Icon: {fileID: 0}
