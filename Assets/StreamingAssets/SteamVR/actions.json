@@ -62,6 +62,14 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/default/in/TargetMissiles",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/FireMissiles",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
@@ -177,7 +185,9 @@
       "/actions/default/out/Haptic": "Haptic",
       "/actions/platformer/in/Jump": "Jump",
       "/actions/default/in/FireWeapon": "Fire Weapon",
-      "/actions/default/in/AltFire": "Alternate Fire"
+      "/actions/default/in/AltFire": "Alternate Fire",
+      "/actions/default/in/TargetMissiles": "Target Missiles",
+      "/actions/default/in/FireMissiles": "Fire Missiles"
     }
   ]
 }

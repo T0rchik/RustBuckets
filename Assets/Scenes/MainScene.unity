@@ -3945,6 +3945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Mech (Cannon + Gatling)
       objectReference: {fileID: 0}
+    - target: {fileID: 2581994902512574799, guid: 2840e4f7560e50b4980f3ed7c8f8eef3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2840e4f7560e50b4980f3ed7c8f8eef3, type: 3}
 --- !u!1 &1171939053

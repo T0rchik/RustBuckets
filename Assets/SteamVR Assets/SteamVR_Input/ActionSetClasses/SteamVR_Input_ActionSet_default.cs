@@ -129,6 +129,22 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Boolean TargetMissiles
+        {
+            get
+            {
+                return SteamVR_Actions.default_TargetMissiles;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean FireMissiles
+        {
+            get
+            {
+                return SteamVR_Actions.default_FireMissiles;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get
