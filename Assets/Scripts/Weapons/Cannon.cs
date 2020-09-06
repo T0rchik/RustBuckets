@@ -23,6 +23,7 @@ public class Cannon : Weapon
             currAmmo -= 1;
             GameObject currProjectile = (GameObject)Instantiate(projectile, muzzlePoint.position, muzzlePoint.rotation);
             currProjectile.GetComponent<Rigidbody>().AddForce(muzzlePoint.forward * shootForce);
+            currProjectile.GetComponent<WeaponReference>().origin = this;
             Destroy(currProjectile, projectileLifetime);
             timeToShoot = shootTime;
 

@@ -33,7 +33,7 @@ public class MechStrafe : MonoBehaviour
     {
         if (timeTillStrafe <= Time.time)
         {
-            mech.AddForce(Vector3.left * force * forceMultiplier, ForceMode.Impulse);
+            mech.AddForce(mech.transform.right * -1 * force * forceMultiplier, ForceMode.Impulse);
             timeTillStrafe = Time.time + rechargeSpeed;
         }
     }
@@ -42,7 +42,7 @@ public class MechStrafe : MonoBehaviour
     {
         if (timeTillStrafe <= Time.time)
         {
-            mech.AddForce(Vector3.right * force * forceMultiplier, ForceMode.Impulse);
+            mech.AddForce(mech.transform.right * force * forceMultiplier, ForceMode.Impulse);
             timeTillStrafe = Time.time + rechargeSpeed;
         }
     }
