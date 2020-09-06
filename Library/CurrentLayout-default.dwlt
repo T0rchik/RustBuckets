@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 782
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -71,10 +71,10 @@ MonoBehaviour:
     y: 0
     width: 1092
     height: 456
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 401, y: 221}
+  m_MaxSize: {x: 8001, y: 4021}
   vertical: 0
-  controlID: 73
+  controlID: 137
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -122,10 +122,10 @@ MonoBehaviour:
     y: 0
     width: 1092
     height: 732
-  m_MinSize: {x: 403, y: 492}
+  m_MinSize: {x: 401, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 72
+  controlID: 136
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 782
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -221,10 +221,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 732
-  m_MinSize: {x: 678, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 677, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 16
+  controlID: 84
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,8 +244,8 @@ MonoBehaviour:
     y: 0
     width: 812
     height: 456
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 444
     height: 732
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_TargetSize: {x: 2025, y: 1035}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
-  m_RenderIMGUI: 0
+  m_RenderIMGUI: 1
   m_MaximizeOnPlay: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
@@ -432,9 +432,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 25.36647, y: 7.544869, z: -61.851357}
+    m_Target: {x: 55.924107, y: -1.1703072, z: -53.38126}
     speed: 2
-    m_Value: {x: 25.36647, y: 7.544869, z: -61.851357}
+    m_Value: {x: 55.924107, y: -1.1703072, z: -53.38126}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -481,13 +481,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.18737572, y: -0.052495446, z: 0.010791325, w: -0.9813276}
+    m_Target: {x: -0.14622095, y: -0.5909371, z: 0.110475354, w: -0.7862649}
     speed: 2
-    m_Value: {x: -0.19022511, y: -0.052436933, z: 0.01094368, w: -0.9802781}
+    m_Value: {x: -0.14631304, y: -0.589461, z: 0.11020056, w: -0.7867554}
   m_Size:
-    m_Target: 2.3931198
+    m_Target: 25.342567
     speed: 2
-    m_Value: 2.3931198
+    m_Value: 24.25126
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -564,10 +564,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 80}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c2f9ffff20faffff60fbffff
+      m_ExpandedIDs: 34f9ffff7cf9fffff6f9fffff8f9fffffaf9ffff3afbfffff4ffffff163b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -629,21 +629,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Michael Dardour\Documents\Unity Projects\RustBuckets
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 25}
-    m_SelectedIDs: 1a450000
-    m_LastClickedID: 17690
-    m_ExpandedIDs: 000000001045000000ca9a3b
+    scrollPos: {x: 0, y: 53}
+    m_SelectedIDs: 18450000
+    m_LastClickedID: 17688
+    m_ExpandedIDs: 0000000008450000184500001c45000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -671,7 +671,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: f2430000
     m_LastClickedID: 17394
-    m_ExpandedIDs: 0000000010450000
+    m_ExpandedIDs: 0000000008450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
