@@ -1495,6 +1495,10 @@ MonoBehaviour:
   pointOfOrigin: {fileID: 1756188533698658819}
   laserDesignator: {fileID: 7609155168534824907}
   rayRange: 50
+  laserColors:
+  - {fileID: 2100000, guid: 09c359d73ef640a4e8bfbe188bcff8ef, type: 2}
+  - {fileID: 2100000, guid: b70b470bdbe67a94e9125a16f11be120, type: 2}
+  - {fileID: 2100000, guid: e2e0c77a6a2b0d54ba8d0cf458560c95, type: 2}
   missileMonitor: {fileID: 4829218612513501751}
 --- !u!120 &1196603154017911111
 LineRenderer:
@@ -7300,7 +7304,7 @@ GameObject:
   - component: {fileID: 7609155170295411595}
   m_Layer: 10
   m_Name: Laser
-  m_TagString: Untagged
+  m_TagString: LaserStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7338,7 +7342,9 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 09c359d73ef640a4e8bfbe188bcff8ef, type: 2}
   - {fileID: 2100000, guid: b70b470bdbe67a94e9125a16f11be120, type: 2}
+  - {fileID: 2100000, guid: e2e0c77a6a2b0d54ba8d0cf458560c95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

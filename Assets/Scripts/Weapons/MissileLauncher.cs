@@ -15,10 +15,11 @@ public class MissileLauncher : Weapon
     public Transform pointOfOrigin;
 
     // Missile Lock On
+    public float lockOnTime = 1.0f;
     private GameObject _selection;
     private string selectableTag = "Enemy";
     float elapsedTime;
-    float viewTime = 3.0f;
+    private bool lockSet = false;
 
     // Laser Pointer Targeting
     public GameObject laserDesignator;
@@ -27,6 +28,7 @@ public class MissileLauncher : Weapon
     private GameObject laserEnd;
     private LaserDesignator LDscript;
     private LineRenderer laser;
+    public Material[] laserColors;
 
     // Missile Monitor
     public GameObject missileMonitor;
@@ -80,6 +82,7 @@ public class MissileLauncher : Weapon
            AltFire();
            laser.enabled = true;
        } else {
+           lockSet = false;
            laser.enabled = false;
        }
        
@@ -119,34 +122,49 @@ public class MissileLauncher : Weapon
             GameObject selection = hit.collider.gameObject;
             laser.SetPosition(1, hit.point);
 
+
             if(selection.CompareTag(selectableTag))
             {
 
                 if(_selection == null)
                 {
                     _selection = selection;
-                    elapsedTime = viewTime;
+                    elapsedTime = lockOnTime;
                 }
                 else
                 {
                     if(_selection != selection)
                     {
-                        elapsedTime = viewTime;
+                        lockSet = false;
+                        elapsedTime = lockOnTime;
                         _selection = selection;
                     }
 
                     elapsedTime -= Time.deltaTime;
-                    if(elapsedTime <= 0f)
+                    if(elapsedTime <= 0f && lockSet == false)
                     {
                         AddLockOn(_selection);
+                        lockSet = true;
                         _selection = null;
                     }
+
+                if(lockSet == true)           //For color Switching
+                {
+                    laser.material = laserColors[2];
+                }
+                else
+                {
+                    laser.material = laserColors[1];
+                }
+                
                 }
             }
 
         }
         else
         {
+            lockSet = false;
+            laser.sharedMaterial = laserColors[0];
             laser.SetPosition(1, laserEnd.transform.position);
         }
 
