@@ -1435,7 +1435,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: db2f83ca4410e574894739ee295ac690, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmmo: 16
   shootTime: 0
-  damage: 0
+  damage: 5
   Mech: {fileID: 4535975315653459151}
   missile: {fileID: 3536557177477991177, guid: 4f7147082b536374bb9bb8f470b41cf6, type: 3}
   targets:
@@ -1618,7 +1618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756188533698658820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.631}
+  m_LocalPosition: {x: 0, y: 0.98, z: 0.631}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1756188533504912270}
@@ -1684,7 +1684,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5747d288ede9ccb428f451139ae90507, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1879,7 +1879,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5747d288ede9ccb428f451139ae90507, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1975,7 +1975,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5747d288ede9ccb428f451139ae90507, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3725,7 +3725,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4535975315653459151}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25.076584, y: 9.28, z: -65.57094}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5783,7 +5783,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5747d288ede9ccb428f451139ae90507, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7266,7 +7266,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7609155170295411592}
   - component: {fileID: 7609155170295411595}
-  - component: {fileID: 7609155170295411594}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -7386,20 +7385,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &7609155170295411594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7609155170295411593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04502381eeb7717408ddb1d5230d51b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raySource: {fileID: 7609155170295411593}
-  weaponRange: 50
 --- !u!1 &7609155170374451362
 GameObject:
   m_ObjectHideFlags: 0

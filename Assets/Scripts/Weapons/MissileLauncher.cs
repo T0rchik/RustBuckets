@@ -89,6 +89,7 @@ public class MissileLauncher : Weapon
                 Debug.Log("Firing");
                 GameObject currMissile = (GameObject)Instantiate(missile, pointOfOrigin.position, pointOfOrigin.rotation);
                 currMissile.GetComponent<Rigidbody>().AddForce(pointOfOrigin.up * 500f);
+                currMissile.GetComponent<WeaponReference>().origin = this;
 
                 HomingMissile script = currMissile.GetComponent<HomingMissile>();
                 script.Fire(targets[i].transform);

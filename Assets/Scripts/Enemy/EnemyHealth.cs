@@ -25,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Weapon shot = collision.gameObject.GetComponent<WeaponReference>().origin;
             DealDamage(shot.damage);
+            //Destroy(collision.gameObject);
         }
     }
 
