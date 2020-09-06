@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyProjectile.cs" />
     <Compile Include="Assets\Scripts\Enemy\DetectPlayerInArea.cs" />
     <Compile Include="Assets\Scripts\Weapons\GatlingGun.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DroneEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

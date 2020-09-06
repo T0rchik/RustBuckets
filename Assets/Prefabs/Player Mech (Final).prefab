@@ -3711,9 +3711,10 @@ GameObject:
   - component: {fileID: 1196603153976012449}
   - component: {fileID: 1196603153976012636}
   - component: {fileID: 1196603154852992867}
-  m_Layer: 0
+  - component: {fileID: 2148587883567214112}
+  m_Layer: 11
   m_Name: Player Mech (Final)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3726,7 +3727,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4535975315653459151}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.076584, y: 9.28, z: -65.57094}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4535975315313515745}
@@ -3814,6 +3815,19 @@ MonoBehaviour:
   rightButton: {fileID: 1228975076232035095}
   force: 10
   rechargeSpeed: 3
+--- !u!135 &2148587883567214112
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535975315653459151}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.005
+  m_Center: {x: 0, y: 0, z: -0.93}
 --- !u!1 &4535975315702092015
 GameObject:
   m_ObjectHideFlags: 0
