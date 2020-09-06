@@ -2,28 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Valve.VR;
+using Valve.VR.InteractionSystem;
 //using UnityEngine.UIElements;
 
 public class MissileLauncher : Weapon
 {
+    // Missile Firing
     public GameObject Mech;
     public GameObject missile;
     public GameObject[] targets;
     public Transform pointOfOrigin;
+
+    // Missile Lock On
+    private GameObject _selection;
+    private string selectableTag = "Enemy";
+    float elapsedTime;
+    float viewTime = 3.0f;
+
+    // Laser Pointer Targeting
+    public GameObject laserDesignator;
+    public float rayRange = 50f;
+    private GameObject laserEnd;
+    private LaserDesignator LDscript;
+    private LineRenderer laser;
+
+    // Missile Monitor
     public GameObject missileMonitor;
     Text[] textBoxes;
     Image[] icons;
     
-    public GameObject laserPointer;
 
     private Camera HMD_Cam;
-    private LineRenderer laserLine;
     private WaitForSeconds shotDuration = new WaitForSeconds(0.7f);
 
     int burstSize = 4;
     int targetIdx = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
        currAmmo = maxAmmo; 
@@ -34,30 +49,36 @@ public class MissileLauncher : Weapon
 
        icons = missileMonitor.GetComponentsInChildren<Image>();
 
-       laserLine = laserPointer.GetComponent<LineRenderer>();
+       laserEnd = GameObject.FindGameObjectWithTag("LaserEnd");
+       LDscript = laserDesignator.GetComponent<LaserDesignator>();
+       laser = laserDesignator.GetComponentInChildren<LineRenderer>();
+       laser.enabled = false;
+
        HMD_Cam = Mech.GetComponentInChildren<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKeyDown(KeyCode.Space))
+       laser.SetPosition(0, laserDesignator.transform.position);
+
+       if(SteamVR_Actions.default_FireMissiles[SteamVR_Input_Sources.RightHand].state)
        {
            Fire();
-       } 
+       }
+       
 
-       if(Input.GetKeyDown(KeyCode.LeftShift))
+       if(SteamVR_Actions.default_TargetMissiles[SteamVR_Input_Sources.RightHand].state && LDscript.inHand == true)
        {
            AltFire();
-       //    laserLine.enabled = true;
+           laser.enabled = true;
+       } else {
+           laser.enabled = false;
        }
-       else{
-        //   laserLine.enabled = false;
-       }
+       
 
         UpdateMissileMonitor();
-    }
-
+    } 
     public override void Fire()
     {
         if(ReadyToFire() && currAmmo > 0)
@@ -83,46 +104,49 @@ public class MissileLauncher : Weapon
 
     public override void AltFire()
     {
-        float rayRange = 50f;           // Make a public variable accessible from Unity
         // Layermask
-        int layerMask = 1 << 11; 
-        layerMask = ~layerMask;
-        //TODO: Add to targets using raycast
-        //Create Laser Pointer
-        Vector3 laserStart = laserPointer.transform.position;
-        laserLine.SetPosition(0, laserStart);
+        LayerMask layerMask = LayerMask.GetMask("Enemy");
+        
         RaycastHit hit;
-        if(Physics.Raycast(laserStart, laserPointer.transform.up* rayRange, out hit, layerMask))
+        if(Physics.Raycast(laserDesignator.transform.position, -laserDesignator.transform.up, out hit, rayRange, layerMask))
         {
-            if(hit.collider)
+            GameObject selection = hit.collider.gameObject;
+            laser.SetPosition(1, hit.point);
+
+            if(selection.CompareTag(selectableTag))
             {
-                Debug.Log(hit.point.ToString());
-                laserLine.SetPosition(1, hit.point);
+                Debug.Log("Got here");
+
+                if(_selection == null)
+                {
+                    _selection = selection;
+                    elapsedTime = viewTime;
+                }
+                else
+                {
+                    if(_selection != selection)
+                    {
+                        elapsedTime = viewTime;
+                        _selection = selection;
+                    }
+
+                    elapsedTime -= Time.deltaTime;
+                    if(elapsedTime <= 0f)
+                    {
+                        AddLockOn(_selection);
+                        _selection = null;
+                    }
+                }
             }
+
         }
         else
         {
-            laserLine.SetPosition(1, laserPointer.transform.up* rayRange);
+            laserEnd.transform.position = -laserDesignator.transform.up * rayRange;
+            Debug.Log(laserEnd.transform.position);
+            laser.SetPosition(1, laserEnd.transform.position);
         }
 
-        /*
-        //StartCoroutine(ShotEffect());
-
-
-        Vector3 rayOrigin = HMD_Cam.ViewportToWorldPoint(new Vector3 (0.5f, 0.5f, 0));
-        RaycastHit hit;
-        laserLine.SetPosition(0, pointOfOrigin.position);
-        if(Physics.Raycast(rayOrigin, HMD_Cam.transform.forward * rayRange, out hit, rayRange, layerMask))
-        {
-            Debug.Log(hit.point.ToString());
-            laserLine.SetPosition(1, hit.point);
-                
-        }
-        else
-        {
-            laserLine.SetPosition(1, rayOrigin + (HMD_Cam.transform.forward * rayRange));
-        }
-        */
     }
 
 
@@ -134,14 +158,6 @@ public class MissileLauncher : Weapon
             return true;
         }
         else { return false;}
-    }
-    private IEnumerator ShotEffect()
-    {
-        //gunAudio.Play();
-
-        laserLine.enabled = true;
-        yield return shotDuration;
-        laserLine.enabled = false;
     }
 
     private void CheckLockOn()
@@ -171,12 +187,12 @@ public class MissileLauncher : Weapon
         if(targets[2] == null && targets[3] != null)
         {
             Debug.Log("Lock 2 took a target from Lock 3");
-            //GameObject temp = targets[3];
             targets[2] = targets[3];
             targets[3] = null;
         }
 
     }
+
     public void UpdateMissileMonitor()
     {
         textBoxes[1].text = AmmoToString();
@@ -194,6 +210,22 @@ public class MissileLauncher : Weapon
             {
                 icons[i].enabled = true;
             }
+        }
+    }
+
+    private void AddLockOn(GameObject target)
+    {
+        Debug.Log("Set Lock " + targetIdx);
+        targets[targetIdx] = target;
+        NextLock();
+    }
+
+    private void NextLock()
+    {
+        targetIdx++;
+        if(targetIdx > 3)       //Keep range between 0-3
+        {
+            targetIdx = 0;
         }
     }
 }
