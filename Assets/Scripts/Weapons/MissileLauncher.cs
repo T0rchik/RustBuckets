@@ -23,6 +23,7 @@ public class MissileLauncher : Weapon
     // Laser Pointer Targeting
     public GameObject laserDesignator;
     public float rayRange = 50f;
+    private GameObject laserStart;
     private GameObject laserEnd;
     private LaserDesignator LDscript;
     private LineRenderer laser;
@@ -49,6 +50,7 @@ public class MissileLauncher : Weapon
 
        icons = missileMonitor.GetComponentsInChildren<Image>();
 
+       laserStart = GameObject.FindGameObjectWithTag("LaserStart");
        laserEnd = GameObject.FindGameObjectWithTag("LaserEnd");
        LDscript = laserDesignator.GetComponent<LaserDesignator>();
        laser = laserDesignator.GetComponentInChildren<LineRenderer>();
@@ -60,7 +62,12 @@ public class MissileLauncher : Weapon
     // Update is called once per frame
     void Update()
     {
-       laser.SetPosition(0, laserDesignator.transform.position);
+       //laser.SetPosition(0, laserDesignator.transform.up);
+       laser.SetPosition(0,laserStart.transform.position);
+
+            laserEnd.transform.position = laserStart.transform.position;
+            laserEnd.transform.rotation = laserStart.transform.rotation;
+            laserEnd.transform.position += -laserEnd.transform.up * rayRange;
 
        if(SteamVR_Actions.default_FireMissiles[SteamVR_Input_Sources.RightHand].state)
        {
@@ -86,7 +93,6 @@ public class MissileLauncher : Weapon
             for(int i = 0; i < burstSize; i++)
             {
                 currAmmo--;
-                Debug.Log("Firing");
                 GameObject currMissile = (GameObject)Instantiate(missile, pointOfOrigin.position, pointOfOrigin.rotation);
                 currMissile.GetComponent<Rigidbody>().AddForce(pointOfOrigin.up * 500f);
 
@@ -98,7 +104,7 @@ public class MissileLauncher : Weapon
             }
         }
         else{
-            Debug.Log("Not Fully Locked");
+            //Debug.Log("Not Fully Locked");
         }
     }
 
@@ -115,7 +121,6 @@ public class MissileLauncher : Weapon
 
             if(selection.CompareTag(selectableTag))
             {
-                Debug.Log("Got here");
 
                 if(_selection == null)
                 {
@@ -142,8 +147,6 @@ public class MissileLauncher : Weapon
         }
         else
         {
-            laserEnd.transform.position = -laserDesignator.transform.up * rayRange;
-            Debug.Log(laserEnd.transform.position);
             laser.SetPosition(1, laserEnd.transform.position);
         }
 
@@ -174,19 +177,19 @@ public class MissileLauncher : Weapon
         //If next lock on has a lock, take it from it. Start from last to first.
         if(targets[0] == null && targets[1] != null)
         {
-            Debug.Log("Lock 0 took a target from Lock 1");
+            //Debug.Log("Lock 0 took a target from Lock 1");
             targets[0] = targets[1];
             targets[1] = null;
         }
         if(targets[1] == null && targets[2] != null)
         {
-            Debug.Log("Lock 1 took a target from Lock 2");
+            //Debug.Log("Lock 1 took a target from Lock 2");
             targets[1] = targets[2];
             targets[2] = null;
         }
         if(targets[2] == null && targets[3] != null)
         {
-            Debug.Log("Lock 2 took a target from Lock 3");
+            //Debug.Log("Lock 2 took a target from Lock 3");
             targets[2] = targets[3];
             targets[3] = null;
         }
@@ -215,7 +218,7 @@ public class MissileLauncher : Weapon
 
     private void AddLockOn(GameObject target)
     {
-        Debug.Log("Set Lock " + targetIdx);
+        //Debug.Log("Set Lock " + targetIdx);
         targets[targetIdx] = target;
         NextLock();
     }
