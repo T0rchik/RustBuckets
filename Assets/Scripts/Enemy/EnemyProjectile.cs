@@ -9,7 +9,7 @@ public class EnemyProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this, 5);
+        Destroy(this.gameObject, 5);
     }
 
     // Update is called once per frame
@@ -20,6 +20,6 @@ public class EnemyProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }

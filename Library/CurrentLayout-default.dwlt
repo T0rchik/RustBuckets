@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 782
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 142
+  controlID: 82
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 141
+  controlID: 81
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 175
+  controlID: 80
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -432,9 +432,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -27.486689, y: -15.551017, z: -37.662903}
+    m_Target: {x: -18.764706, y: -31.339508, z: -24.201992}
     speed: 2
-    m_Value: {x: -27.486689, y: -15.551017, z: -37.662903}
+    m_Value: {x: -18.764706, y: -31.339508, z: -24.201992}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -481,13 +481,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.14494133, y: -0.26619408, z: 0.04132617, w: -0.9526206}
+    m_Target: {x: -0.2953502, y: 0.020687459, z: -0.0055585774, w: -0.955705}
     speed: 2
-    m_Value: {x: -0.14629227, y: -0.26599056, z: 0.041704074, w: -0.9518972}
+    m_Value: {x: -0.17750129, y: -0.51856387, z: 0.11155303, w: -0.8289396}
   m_Size:
-    m_Target: 43.289673
+    m_Target: 86.69367
     speed: 2
-    m_Value: 43.289673
+    m_Value: 86.69367
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -565,9 +565,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d22bfeff
-      m_LastClickedID: -119854
-      m_ExpandedIDs: 6841feffd852feff166efeffea6ffeff067afeffda7bfeff8c80feffce86feffae91feff20e1ffff46e4ffff56e6ffff74edffffc0eeffffd8effffff6efffff88f4ffff3afbfffff4ffffff
+      m_SelectedIDs: 244c0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: bc65ffffc265ffffdc6fffffb272ffff7eafffff26b4ffff60fbfffff4ffffff7e660000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -629,21 +629,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Material
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Material
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Michael Dardour\Documents\Unity Projects\RustBuckets
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 14450000
-    m_LastClickedID: 17684
-    m_ExpandedIDs: 000000000845000014450000184500001a4500001a4b00001c4b00001e4b000000ca9a3b
+    scrollPos: {x: 0, y: 25}
+    m_SelectedIDs: 7e480000
+    m_LastClickedID: 18558
+    m_ExpandedIDs: 000000004e480000804800008448000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -671,7 +671,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: f2430000
     m_LastClickedID: 17394
-    m_ExpandedIDs: 0000000008450000
+    m_ExpandedIDs: 000000004e480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
