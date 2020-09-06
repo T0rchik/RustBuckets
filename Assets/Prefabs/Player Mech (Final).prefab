@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1228975076658439191}
   - component: {fileID: 1228975076232035095}
   - component: {fileID: 1228975076716381139}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 1228975076537623493}
   - component: {fileID: 1228975076897193157}
   - component: {fileID: 1228975076584489985}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 1219927319591018353}
   - component: {fileID: 1188348943975258411}
   - component: {fileID: 1209927169122234403}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MovingPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 1219927320276097187}
   - component: {fileID: 1188348944900857593}
   - component: {fileID: 1209927169787197425}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MovingPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -819,7 +819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1196603154429291750}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Strafe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,7 +980,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1196603155427117131}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StrafeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1151,7 +1151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1196603155829623259}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StrafeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2358,7 +2358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4535975314506691832}
   - component: {fileID: 4535975314506691833}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3712,7 +3712,7 @@ GameObject:
   - component: {fileID: 1196603153976012636}
   - component: {fileID: 1196603154852992867}
   m_Layer: 0
-  m_Name: Player Mech (w Monitors) Variant 1 1
+  m_Name: Player Mech (Final)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5932,7 +5932,7 @@ GameObject:
   - component: {fileID: 7609155168360952710}
   - component: {fileID: 7609155168360952711}
   - component: {fileID: 7609155168360952708}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Laser Designator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6029,7 +6029,7 @@ GameObject:
   - component: {fileID: 7609155168534824906}
   - component: {fileID: 7609155168534824901}
   - component: {fileID: 7609155168534824900}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Targeting System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6125,7 +6125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7609155168709872049}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Monitor Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6235,7 +6235,7 @@ GameObject:
   - component: {fileID: 7609155168834634784}
   - component: {fileID: 7609155168834634787}
   - component: {fileID: 7609155168834634786}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MovingPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6332,7 +6332,7 @@ GameObject:
   - component: {fileID: 7609155168841511280}
   - component: {fileID: 7609155168841511283}
   - component: {fileID: 7609155168841511282}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6815,7 +6815,7 @@ GameObject:
   - component: {fileID: 7609155169926435519}
   - component: {fileID: 7609155169926435518}
   - component: {fileID: 7609155169926435505}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MovingPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6912,7 +6912,7 @@ GameObject:
   - component: {fileID: 7609155169944819625}
   - component: {fileID: 7609155169944819624}
   - component: {fileID: 7609155169944819627}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7159,7 +7159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7609155170142122824}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Minimap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7267,7 +7267,7 @@ GameObject:
   - component: {fileID: 7609155170295411592}
   - component: {fileID: 7609155170295411595}
   - component: {fileID: 7609155170295411594}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7409,7 +7409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7609155170374451363}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Missile Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7440,7 +7440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7609155170397518146}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Laser End
   m_TagString: LaserEnd
   m_Icon: {fileID: 0}

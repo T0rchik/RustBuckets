@@ -45,6 +45,10 @@ namespace Valve.VR
         
         private static SteamVR_Action_Boolean p_default_PrevWeapon;
         
+        private static SteamVR_Action_Boolean p_default_TargetMissiles;
+        
+        private static SteamVR_Action_Boolean p_default_FireMissiles;
+        
         private static SteamVR_Action_Vibration p_default_Haptic;
         
         private static SteamVR_Action_Vector2 p_platformer_Move;
@@ -173,6 +177,22 @@ namespace Valve.VR
             }
         }
         
+        public static SteamVR_Action_Boolean default_TargetMissiles
+        {
+            get
+            {
+                return SteamVR_Actions.p_default_TargetMissiles.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean default_FireMissiles
+        {
+            get
+            {
+                return SteamVR_Actions.p_default_FireMissiles.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
         public static SteamVR_Action_Vibration default_Haptic
         {
             get
@@ -254,6 +274,8 @@ namespace Valve.VR
                     SteamVR_Actions.default_AltFire,
                     SteamVR_Actions.default_NextWeapon,
                     SteamVR_Actions.default_PrevWeapon,
+                    SteamVR_Actions.default_TargetMissiles,
+                    SteamVR_Actions.default_FireMissiles,
                     SteamVR_Actions.default_Haptic,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.platformer_Jump,
@@ -277,6 +299,8 @@ namespace Valve.VR
                     SteamVR_Actions.default_AltFire,
                     SteamVR_Actions.default_NextWeapon,
                     SteamVR_Actions.default_PrevWeapon,
+                    SteamVR_Actions.default_TargetMissiles,
+                    SteamVR_Actions.default_FireMissiles,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Steering,
@@ -301,6 +325,8 @@ namespace Valve.VR
                     SteamVR_Actions.default_AltFire,
                     SteamVR_Actions.default_NextWeapon,
                     SteamVR_Actions.default_PrevWeapon,
+                    SteamVR_Actions.default_TargetMissiles,
+                    SteamVR_Actions.default_FireMissiles,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset};
@@ -327,6 +353,8 @@ namespace Valve.VR
                     SteamVR_Actions.default_AltFire,
                     SteamVR_Actions.default_NextWeapon,
                     SteamVR_Actions.default_PrevWeapon,
+                    SteamVR_Actions.default_TargetMissiles,
+                    SteamVR_Actions.default_FireMissiles,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Steering,
@@ -351,6 +379,8 @@ namespace Valve.VR
             SteamVR_Actions.p_default_AltFire = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/AltFire")));
             SteamVR_Actions.p_default_NextWeapon = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/NextWeapon")));
             SteamVR_Actions.p_default_PrevWeapon = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/PrevWeapon")));
+            SteamVR_Actions.p_default_TargetMissiles = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/TargetMissiles")));
+            SteamVR_Actions.p_default_FireMissiles = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/FireMissiles")));
             SteamVR_Actions.p_default_Haptic = ((SteamVR_Action_Vibration)(SteamVR_Action.Create<SteamVR_Action_Vibration>("/actions/default/out/Haptic")));
             SteamVR_Actions.p_platformer_Move = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/platformer/in/Move")));
             SteamVR_Actions.p_platformer_Jump = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/platformer/in/Jump")));
